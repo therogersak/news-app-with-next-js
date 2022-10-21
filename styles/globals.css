@@ -1,0 +1,14 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-family: Montserrat;
+  font-weight: bold;
+}
+
+.btn {
+  @apply bg-black text-white py-2 px-3 rounded-md shadow-sm transition-all duration-200 hover:bg-gray-800;
+}
