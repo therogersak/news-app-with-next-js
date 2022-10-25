@@ -1,7 +1,9 @@
 import Head from "next/head";
 import Header from "../components/Header";
+import Main from "../components/Main";
 
-export default function Home() {
+export default function Home(data) {
+  console.log(data)
   return (
     <div className="text-balck">
       <Head>
@@ -11,6 +13,17 @@ export default function Home() {
       </Head>
 
       <Header />
+      <Main data={data} />
     </div>
   );
+}
+
+export async function getServerSideProps() {
+  const data = await fetch(
+    `https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.API_KEY}`
+  ).then((res) => res.json());
+
+  return {
+    props: { data },
+  };
 }
