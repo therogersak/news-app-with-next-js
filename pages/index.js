@@ -1,9 +1,10 @@
 import Head from "next/head";
 import Header from "../components/Header";
 import Main from "../components/Main";
+import News from "../components/News";
 
 export default function Home(data) {
-  console.log(data)
+  console.log(data);
   return (
     <div className="text-balck">
       <Head>
